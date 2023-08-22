@@ -1,0 +1,33 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+}
+body{
+    background-size: cover;
+    background-image: url(./img/5f2f6dc20c31cf8d1ccb8d59dac2f62f.jpeg);
+    background-repeat: no-repeat;
+}
+.container {
+    background: linear-gradient(0, #120c563d, #00000042);
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 100px auto 0;
+}
+.input-task{
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    height: 40px;
+    padding-left: 10px;
+
+}
+.button-add-task{
+    
+}
+img {
+    height: 25px;
+}

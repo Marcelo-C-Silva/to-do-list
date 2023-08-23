@@ -23,6 +23,7 @@ body{
     width: 300px;
     height: 40px;
     padding-left: 10px;
+    color: #000000;
 
 }
 .button-add-task{
@@ -59,6 +60,7 @@ body{
     border-radius: 5px;
     margin-bottom: 20px;
     cursor: pointer;
+    color: #000000;
 }
 img {
     height: 25px;

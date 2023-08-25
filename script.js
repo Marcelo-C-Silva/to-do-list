@@ -20,8 +20,8 @@ function mostrarTarefa() {
     let novaLi = '';
     minhaListaDeItens.forEach((item, posicao) => {
         novaLi = novaLi + ` 
-        <li class="task">
-        <img src="./img/checked.png" alt="" onclick = 'concluirTarefa(${posicao})'>
+        <li class="task ${item.concluida && 'done'}">
+        <img  src="./img/checked.png" alt="" onclick = 'concluirTarefa(${posicao})'>
         <p>${item.tarefa}</p>
         <img src="./img/trash.png" alt="" onclick ='deletarItem(${posicao})'>
         </li>

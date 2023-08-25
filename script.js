@@ -5,18 +5,24 @@ let listaCompleta = document.querySelector('.list-task');
 let minhaListaDeItens = []
 
 function adicionarNovaTarefa() {
-    minhaListaDeItens.push(input.value);
+    minhaListaDeItens.push({
+        tarefa: input.value,
+        concluida: false
+    });
+
+    input.value='';
+
     mostrarTarefa();
 }
 
 function mostrarTarefa() {
 
     let novaLi = '';
-    minhaListaDeItens.forEach((tarefa, posicao) => {
+    minhaListaDeItens.forEach((item, posicao) => {
         novaLi = novaLi + ` 
         <li class="task">
-        <img src="./img/checked.png" alt="">
-        <p>${tarefa}</p>
+        <img src="./img/checked.png" alt="" onclick = 'concluirTarefa(${posicao})'>
+        <p>${item.tarefa}</p>
         <img src="./img/trash.png" alt="" onclick ='deletarItem(${posicao})'>
         </li>
     `
@@ -24,8 +30,8 @@ function mostrarTarefa() {
 
     listaCompleta.innerHTML = novaLi;
 }
-function concluirTarefa() {
-    
+function concluirTarefa(posicao) {
+    minhaListaDeItens[posicao].concluida = !minhaListaDeItens[posicao].concluida
 }
 
 function deletarItem(posicao) {

@@ -31,7 +31,9 @@ function mostrarTarefa() {
     listaCompleta.innerHTML = novaLi;
 }
 function concluirTarefa(posicao) {
-    minhaListaDeItens[posicao].concluida = !minhaListaDeItens[posicao].concluida
+    minhaListaDeItens[posicao].concluida = !minhaListaDeItens[posicao].concluida;
+
+    mostrarTarefa();
 }
 
 function deletarItem(posicao) {

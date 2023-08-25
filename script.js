@@ -5,9 +5,16 @@ let listaCompleta = document.querySelector('.list-task');
 let minhaListaDeItens = []
 
 function adicionarNovaTarefa() {
+
+    if (!input.value) {
+        alert('Digite algo para inserir em sua lista')
+    }
+
     minhaListaDeItens.push({
         tarefa: input.value,
         concluida: false
+
+
     });
 
     input.value = '';
@@ -47,12 +54,13 @@ function deletarItem(posicao) {
 
 function recarregarTarefa() {
     let tarefaDoLocalStorage = localStorage.getItem('lista');
-    
+
     if (tarefaDoLocalStorage) {
         minhaListaDeItens = JSON.parse(tarefaDoLocalStorage);
     }
     mostrarTarefa();
 }
+
 
 recarregarTarefa();
 

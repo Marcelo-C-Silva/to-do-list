@@ -24,6 +24,9 @@ function mostrarTarefa() {
 
     listaCompleta.innerHTML = novaLi;
 }
+function concluirTarefa() {
+    
+}
 
 function deletarItem(posicao) {
     minhaListaDeItens.splice(posicao, 1);

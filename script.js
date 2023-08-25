@@ -10,7 +10,7 @@ function adicionarNovaTarefa() {
         concluida: false
     });
 
-    input.value='';
+    input.value = '';
 
     mostrarTarefa();
 }
@@ -29,6 +29,8 @@ function mostrarTarefa() {
     });
 
     listaCompleta.innerHTML = novaLi;
+
+    localStorage.setItem('lista', JSON.stringify(minhaListaDeItens));
 }
 function concluirTarefa(posicao) {
     minhaListaDeItens[posicao].concluida = !minhaListaDeItens[posicao].concluida;
@@ -37,8 +39,21 @@ function concluirTarefa(posicao) {
 }
 
 function deletarItem(posicao) {
+
     minhaListaDeItens.splice(posicao, 1);
+
     mostrarTarefa();
 }
+
+function recarregarTarefa() {
+    let tarefaDoLocalStorage = localStorage.getItem('lista');
+    
+    if (tarefaDoLocalStorage) {
+        minhaListaDeItens = JSON.parse(tarefaDoLocalStorage);
+    }
+    mostrarTarefa();
+}
+
+recarregarTarefa();
 
 button.addEventListener('click', adicionarNovaTarefa);

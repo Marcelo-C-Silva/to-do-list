@@ -7,19 +7,23 @@ let minhaListaDeItens = []
 function adicionarNovaTarefa() {
 
     if (!input.value) {
-        alert('Digite algo para inserir em sua lista')
+        alert('Digite algo para inserir em sua lista');
+
+    }
+    else{
+        minhaListaDeItens.push({
+            tarefa: input.value,
+            concluida: false
+    
+    
+        });
+    
+        input.value = '';
+    
+        mostrarTarefa();
     }
 
-    minhaListaDeItens.push({
-        tarefa: input.value,
-        concluida: false
 
-
-    });
-
-    input.value = '';
-
-    mostrarTarefa();
 }
 
 function mostrarTarefa() {
